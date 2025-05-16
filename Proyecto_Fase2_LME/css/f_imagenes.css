@@ -1,0 +1,183 @@
+/* --------------------------------------
+   RESET DE ESTILOS BÁSICOS
+---------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace; /* Fuente estilo militar */
+}
+
+/* --------------------------------------
+   CUERPO DE LA PÁGINA
+---------------------------------------- */
+body {
+    background-color: #1C1C1C; /* Fondo oscuro */
+    color: #DDD; /* Texto gris claro */
+    line-height: 1.6; /* Espaciado de líneas para mejor legibilidad */
+}
+
+/* --------------------------------------
+   ENCABEZADO PRINCIPAL
+---------------------------------------- */
+header {
+    background-color: #223344; /* Azul militar oscuro */
+    color: #C0A060; /* Color dorado para el texto */
+    padding: 20px 0; /* Espaciado interno arriba y abajo */
+    text-align: center; /* Centrado horizontal del texto */
+    font-size: 2rem; /* Tamaño grande para título */
+    font-weight: bold; /* Negrita */
+    border-bottom: 3px solid #C0A060; /* Línea dorada decorativa */
+}
+
+/* --------------------------------------
+   CONTENEDOR GENERAL
+---------------------------------------- */
+.container {
+    width: 80%; /* Ancho del contenido principal */
+    margin: 50px auto; /* Centrado horizontal y separación vertical */
+}
+
+/* --------------------------------------
+   CUADRO DE CONTENIDO DE TEXTO
+---------------------------------------- */
+.content {
+    background-color: #2B2B2B; /* Fondo gris oscuro */
+    padding: 20px; /* Espaciado interior */
+    margin: 20px 0; /* Margen arriba y abajo */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra para resaltar */
+    border-radius: 10px; /* Bordes redondeados */
+    color: #DDD; /* Texto claro */
+    text-align: justify; /* Alineación justificada */
+}
+
+/* --------------------------------------
+   ESTILO DEL PIE DE PÁGINA
+---------------------------------------- */
+footer {
+    background-color: #111; /* Fondo negro */
+    color: white; /* Texto blanco */
+    text-align: center; /* Centrado del texto */
+    padding: 15px 0; /* Espaciado interior */
+    width: 100%; /* Ocupar todo el ancho */
+    border-top: 2px solid #C0A060; /* Línea dorada decorativa */
+    font-size: 0.9rem; /* Tamaño de texto pequeño */
+}
+
+/* --------------------------------------
+   MENÚ DE NAVEGACIÓN
+---------------------------------------- */
+nav {
+    background-color: #223344; /* Azul oscuro militar */
+    padding: 15px 0; /* Espaciado interno */
+    border-bottom: 3px solid #C0A060; /* Línea decorativa dorada */
+}
+
+/* Estilo de lista horizontal del menú */
+.horizontal {
+    list-style: none; /* Sin viñetas */
+    display: flex; /* Elementos alineados en fila */
+    justify-content: center; /* Centrado horizontal */
+    gap: 20px; /* Espacio entre elementos */
+}
+
+/* Estilo de enlaces del menú */
+.horizontal > li > a {
+    display: block; /* Área clickeable completa */
+    padding: 12px 20px; /* Espaciado interno */
+    color: #C0A060; /* Color dorado */
+    text-decoration: none; /* Sin subrayado */
+    font-weight: bold; /* Negrita */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    border: 2px solid transparent; /* Borde inicial invisible */
+    transition: background-color 0.3s, border 0.3s, color 0.3s; /* Transiciones suaves */
+}
+
+/* Efecto al pasar el mouse sobre enlaces */
+.horizontal > li > a:hover {
+    background-color: #2B3E50; /* Azul oscuro de fondo */
+    border: 2px solid #C0A060; /* Borde dorado */
+    color: white; /* Texto blanco */
+}
+
+/* Estilos del contenedor del carrusel */
+.carousel {
+    margin: 40px auto;             /* Agrega un margen superior e inferior y centra horizontalmente */
+    max-width: 700px;              /* Define un ancho máximo para el carrusel */
+    border-radius: 10px;           /* Aplica bordes redondeados al carrusel */
+    overflow: hidden;              /* Oculta cualquier contenido que sobresalga del área del carrusel */
+}
+
+/* Estilos para las imágenes dentro del carrusel */
+.carousel img {
+    height: 400px;                 /* Altura fija para todas las imágenes (tamaño medio) */
+    object-fit: contain;          /* Asegura que toda la imagen sea visible sin recortarse */
+    border: 3px solid #C0A060;    /* Agrega un borde dorado tipo militar */
+    border-radius: 10px;          /* Aplica bordes redondeados a las imágenes */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);  /* Añade sombra para dar profundidad */
+}
+
+/* Computadoras (pantallas grandes) */
+@media (min-width: 1024px) {
+  .horizontal {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .horizontal a {
+    padding: 1rem 2rem;
+    width: auto;
+  }
+
+  .guerra-civil {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+/* telefonos móviles */
+@media (max-width: 768px) {
+    .horizontal {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .horizontal a {
+      padding: 0.75rem;
+      width: 100%;
+    }
+  
+    .guerra-civil {
+      padding: 0.5rem;
+    }
+}
+
+/* tablets (modo vertical y horizontal) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .horizontal {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .horizontal li {
+      flex: 1 1 50%;
+      text-align: center;
+    }
+  
+    .horizontal a {
+      padding: 1rem;
+      font-size: 1.1rem;
+    }
+  
+    .guerra-civil {
+      padding: 1.5rem;
+      font-size: 1.1rem;
+    }
+  
+    main h1 {
+      font-size: 2rem;
+    }
+}

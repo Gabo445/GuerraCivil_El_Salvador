@@ -1,0 +1,256 @@
+/* Estilos generales */
+body {
+    background-color: #1C1C1C; /* Fondo oscuro estilo camuflaje */
+    color: #C0A060; /* Texto dorado militar para contraste */
+    font-family: "Courier New", Courier, monospace; /* Fuente con estilo robusto */
+    margin: 0; /* Elimina márgenes por defecto */
+    padding: 0; /* Elimina relleno por defecto */
+    display: flex; /* Activa flexbox */
+    flex-direction: column; /* Organiza los elementos en columna */
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    min-height: 100vh; /* Ocupa toda la altura de la ventana */
+}
+
+/* Barra de navegación */
+nav {
+    background-color: #2B3E50; /* Azul táctico oscuro */
+    padding: 15px 0; /* Espaciado interno superior e inferior */
+    border-bottom: 3px solid #C0A060; /* Línea dorada militar */
+    width: 100%; /* La barra ocupa todo el ancho */
+    display: flex; /* Activa flexbox */
+    justify-content: center; /* Centra los elementos */
+    position: fixed; /* Fija la barra de navegación */
+    top: 0; /* Se mantiene en la parte superior */
+    z-index: 1000; /* Prioridad sobre otros elementos */
+}
+
+/* Lista de navegación */
+nav ul {
+    list-style: none; /* Elimina los estilos de lista predeterminados */
+    display: flex; /* Alinea los elementos en fila */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    padding: 0; /* Elimina el relleno */
+    gap: 20px; /* Espaciado entre elementos */
+}
+
+/* Elementos del menú */
+nav ul.horizontal li {
+    margin: 0 15px; /* Espaciado entre elementos */
+}
+
+/* Enlaces del menú */
+nav ul.horizontal li a {
+    color: #C0A060; /* Color dorado militar */
+    text-decoration: none; /* Elimina subrayado de los enlaces */
+    font-weight: bold; /* Hace el texto más grueso */
+    padding: 12px 20px; /* Espaciado interno */
+    background-color: #1C1C1C; /* Fondo negro táctico */
+    border: 2px solid #444; /* Borde gris oscuro */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: 0.3s ease-in-out; /* Suaviza la transición del efecto */
+}
+
+/* Efecto visual al pasar el cursor sobre los enlaces */
+nav ul.horizontal li a:hover {
+    background-color: #444; /* Gris oscuro táctico */
+    border: 2px solid #C0A060; /* Se añade un borde dorado militar */
+    color: white; /* El texto cambia a blanco */
+}
+
+/* Encabezado */
+header {
+    text-align: center; /* Centra el texto */
+    padding: 20px; /* Espaciado alrededor */
+    background-color: #2B3E50; /* Azul táctico */
+    color: #C0A060; /* Dorado militar */
+    font-size: 24px; /* Tamaño de letra más grande */
+    font-weight: bold; /* Texto en negrita */
+    text-transform: uppercase; /* Convierte el texto en mayúsculas */
+    border-bottom: 5px solid #444; /* Línea negra gruesa en la parte inferior */
+    margin-top: 60px; /* Ajuste para evitar solapamiento con el nav fijo */
+}
+
+/* Contenedor multimedia */
+.media-container {
+    display: grid; /* Activa el modelo de caja con grid */
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
+    gap: 20px; /* Espaciado entre elementos */
+    padding: 20px; /* Espaciado interno */
+    text-align: center; /* Centra el contenido */
+}
+
+/* Títulos de sección */
+h2 {
+    color: #C0A060; /* Color dorado militar */
+    text-transform: uppercase; /* Convierte el texto en mayúsculas */
+    border-bottom: 3px solid #444; /* Línea divisoria debajo del título */
+    display: inline-block; /* Permite aplicar bordes */
+    padding-bottom: 5px; /* Espaciado inferior */
+    grid-column: span 2; /* Ocupar ambas columnas en el grid */
+}
+
+/* Contenedores de video y audio */
+.video-gallery, .audio-gallery {
+    background-color: #2B3E50; /* Azul táctico */
+    border: 3px solid #444; /* Borde oscuro */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+    display: flex; /* Activa flexbox */
+    justify-content: center; /* Centra el contenido */
+    align-items: center; /* Asegura alineación vertical */
+}
+
+/* Estilos de video y audio */
+video, audio {
+    width: 90%; /* Ocupa el 90% del ancho del contenedor */
+    border: 2px solid #C0A060; /* Borde dorado militar */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Pie de página */
+footer {
+    text-align: center; /* Centra el texto */
+    padding: 10px; /* Espaciado interno */
+    background-color: #1C1C1C; /* Fondo oscuro táctico */
+    color: #C0A060; /* Texto dorado militar */
+    border-top: 3px solid #444; /* Línea divisoria en la parte superior */
+    font-size: 14px; /* Tamaño de letra pequeño */
+    position: relative; /* Ajuste de posición */
+    width: 100%; /* Ocupar todo el ancho */
+}
+
+
+/* Modo nocturno mejorado */
+.dark-mode {
+    background-color: #0A0A0A; /* Negro profundo */
+    color: #32CD32; /* Verde neón militar */
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Agregar borde luminoso a los videos y audios en modo nocturno */
+.dark-mode .video-gallery, 
+.dark-mode .audio-gallery {
+    border: 3px solid #32CD32; /* Resplandor verde neón */
+    box-shadow: 0px 0px 15px #32CD32; /* Efecto de brillo */
+}
+
+/* Agregar resplandor a los bordes del menú en modo nocturno */
+.dark-mode nav {
+    border-bottom: 3px solid #32CD32; /* Línea inferior verde neón */
+    box-shadow: 0px 0px 10px #32CD32; /* Efecto luminoso en la barra de navegación */
+}
+
+/* Resplandor en los enlaces del menú al pasar el cursor */
+.dark-mode nav ul.horizontal li a:hover {
+    background-color: #444;
+    border: 2px solid #32CD32;
+    box-shadow: 0px 0px 10px #32CD32;
+    color: white;
+}
+
+/* Botón con efecto de resplandor */
+.dark-mode button {
+    background-color: #32CD32;
+    color: black;
+    box-shadow: 0px 0px 10px #32CD32;
+}
+
+.dark-mode button:hover {
+    background-color: #444;
+    color: white;
+}
+
+@keyframes glow {
+    0% { box-shadow: 0px 0px 5px #32CD32; }
+    50% { box-shadow: 0px 0px 15px #32CD32; }
+    100% { box-shadow: 0px 0px 5px #32CD32; }
+}
+
+.dark-mode .video-gallery, 
+.dark-mode .audio-gallery {
+    animation: glow 5s infinite alternate; /* Aplica el efecto de resplandor */
+}
+
+/* Animación de deslizar desde la izquierda */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%); /* Comienza fuera de la pantalla */
+        opacity: 0; /* Invisible */
+    }
+    to {
+        transform: translateX(0); /* Vuelve a su posición normal */
+        opacity: 1; /* Totalmente visible */
+    }
+}
+
+/* Aplicar la animación a los elementos multimedia */
+.video-gallery, .audio-gallery {
+    opacity: 0; /* Ocultamos inicialmente */
+    animation: slideIn 1s ease-in-out forwards; /* Aplica la animación */
+}
+
+/* Computadoras (pantallas grandes) */
+@media (min-width: 1024px) {
+    .horizontal {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  
+    .horizontal a {
+      padding: 1rem 2rem;
+      width: auto;
+    }
+  
+    .guerra-civil {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+}
+
+/* telefonos móviles */
+@media (max-width: 768px) {
+    .horizontal {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .horizontal a {
+      padding: 0.75rem;
+      width: 100%;
+    }
+  
+    .guerra-civil {
+      padding: 0.5rem;
+    }
+}
+
+/* tablets (modo vertical y horizontal) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .horizontal {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .horizontal li {
+      flex: 1 1 50%;
+      text-align: center;
+    }
+  
+    .horizontal a {
+      padding: 1rem;
+      font-size: 1.1rem;
+    }
+  
+    .guerra-civil {
+      padding: 1.5rem;
+      font-size: 1.1rem;
+    }
+  
+    main h1 {
+      font-size: 2rem;
+    }
+}

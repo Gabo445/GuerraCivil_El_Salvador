@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guerra Civil de El Salvador</title>
+    <style>
+        /* Estilo general para el cuerpo de la página */
+        body {
+            font-family: Arial, sans-serif; /* Fuente principal */
+            background-color: #1F2A35; /* Color de fondo oscuro */
+            color: #E0E0E0; /* Color del texto */
+            margin: 0; /* Sin márgenes */
+            padding: 0; /* Sin relleno */
+            text-align: justify; /* Justifica el texto */
+        }
+
+        /* Encabezado principal */
+        header {
+            background-color: #3B5323; /* Fondo verde oliva */
+            color: #E0E0E0; /* Texto claro */
+            padding: 20px; /* Relleno interno */
+            text-align: center; /* Centra el contenido */
+        }
+
+        /* Contenedor del logo y lema */
+        header .logo-container {
+            display: flex; /* Caja flexible */
+            flex-direction: column; /* Elementos en columna */
+            align-items: center; /* Alinea al centro horizontalmente */
+            margin-bottom: 20px; /* Espacio inferior */
+        }
+
+        /* Estilo del escudo */
+        header .shield {
+            position: relative; /* Posición relativa para elementos internos */
+            width: 100px; /* Ancho fijo */
+            height: 100px; /* Alto fijo */
+            margin: 0 auto; /* Centra horizontalmente */
+            background: radial-gradient(circle, #556B2F 20%, #FFFFFF 40%, #556B2F 60%, #C0A060 80%); /* Degradado circular */
+            border-radius: 50%; /* Bordes redondeados */
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5), 0 10px 25px rgba(0, 0, 0, 0.8); /* Sombras internas y externas */
+        }
+
+        /* Estilo de la estrella dentro del escudo */
+        header .star {
+            position: absolute; /* Posición absoluta */
+            top: 50%; /* Centro vertical */
+            left: 50%; /* Centro horizontal */
+            transform: translate(-50%, -50%); /* Ajusta la posición al centro */
+            width: 40px; /* Ancho de la estrella */
+            height: 40px; /* Alto de la estrella */
+            background: #FFD700; /* Color dorado */
+            clip-path: polygon( /* Forma de estrella */
+                50% 0%, 61% 35%, 98% 35%, 
+                68% 57%, 79% 91%, 50% 70%, 
+                21% 91%, 32% 57%, 2% 35%, 
+                39% 35%
+            );
+        }
+
+        /* Estilo del lema */
+        header .phrase {
+            margin-top: 10px; /* Espacio superior */
+            font-size: 12px; /* Tamaño de fuente pequeño */
+            font-weight: bold; /* Negrita */
+            color: #FFD700; /* Color dorado */
+        }
+
+        /* Barra de navegación */
+        nav ul {
+            list-style-type: none; /* Sin viñetas */
+            padding: 0; /* Sin relleno */
+            margin: 0; /* Sin márgenes */
+            display: flex; /* Caja flexible */
+            justify-content: center; /* Centra los elementos */
+            background-color: #2F4F4F; /* Fondo verde grisáceo */
+        }
+
+        nav ul li {
+            margin: 0 10px; /* Espaciado horizontal */
+        }
+
+        nav ul li a {
+            color: #FFD700; /* Color dorado */
+            text-decoration: none; /* Sin subrayado */
+            padding: 10px 20px; /* Espaciado interno */
+            display: block; /* Hace clicable todo el bloque */
+            transition: background-color 0.3s; /* Transición suave */
+        }
+
+        nav ul li a:hover {
+            background-color: #556B2F; /* Fondo verde militar al pasar el ratón */
+        }
+
+        /* Contenido principal */
+        main {
+            padding: 20px; /* Relleno interno */
+        }
+
+        /* Secciones principales */
+        section {
+            margin-bottom: 40px; /* Espaciado entre secciones */
+        }
+
+        /* Títulos de las secciones */
+        section h2 {
+            background-color: #3B5323; /* Fondo verde oliva */
+            color: #FFD700; /* Texto dorado */
+            padding: 10px; /* Espaciado interno */
+        }
+
+        /* Estilo general para las tablas */
+        table {
+            width: 100%; /* Ocupa todo el ancho */
+            border-collapse: collapse; /* Colapsa bordes */
+            margin: 20px 0; /* Espaciado vertical */
+            background-color: #2B2B2B; /* Fondo gris oscuro */
+        }
+
+        table, th, td {
+            border: 1px solid #ccc; /* Bordes de tabla */
+        }
+
+        th, td {
+            padding: 10px; /* Espaciado interno */
+            text-align: left; /* Alineado a la izquierda */
+        }
+
+        th {
+            background-color: #3B5323; /* Fondo verde oliva */
+            color: #FFD700; /* Texto dorado */
+        }
+
+        /* Contenedor de imágenes */
+        .image-container {
+            display: flex; /* Caja flexible */
+            justify-content: center; /* Centra las imágenes */
+            margin-top: 20px; /* Espaciado superior */
+        }
+
+        .image-container img {
+            max-width: 100%; /* Ancho máximo */
+            height: auto; /* Mantiene proporciones */
+            border-radius: 5px; /* Bordes redondeados */
+        }
+
+        /* Pie de página */
+        footer {
+            background-color: #3B5323; /* Fondo verde oliva */
+            color: #E0E0E0; /* Texto claro */
+            text-align: center; /* Centrado */
+            padding: 10px; /* Relleno interno */
+        }
+
+        /* Computadoras (pantallas grandes) */
+@media (min-width: 1024px) {
+    .horizontal {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  
+    .horizontal a {
+      padding: 1rem 2rem;
+      width: auto;
+    }
+  
+    .guerra-civil {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+}
+
+/* telefonos móviles */
+@media (max-width: 768px) {
+    .horizontal {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .horizontal a {
+      padding: 0.75rem;
+      width: 100%;
+    }
+  
+    .guerra-civil {
+      padding: 0.5rem;
+    }
+}
+
+/* tablets (modo vertical y horizontal) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .horizontal {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .horizontal li {
+      flex: 1 1 50%;
+      text-align: center;
+    }
+  
+    .horizontal a {
+      padding: 1rem;
+      font-size: 1.1rem;
+    }
+  
+    .guerra-civil {
+      padding: 1.5rem;
+      font-size: 1.1rem;
+    }
+  
+    main h1 {
+      font-size: 2rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <nav>
+        <ul class="horizontal">
+            <li><a href="menuprincipal.html">Menú</a></li>
+            <li><a href="guerracivil.html">Información</a></li>
+            <li><a href="Imagenes.html">Imagenes</a></li>
+            <li><a href="Multimedia.html"> Multimedia</a></li>
+            <li><a href="Form_Contacto.html">Formulario de Contacto</a></li>
+            <li><a href="Creadores.html">Creadores</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <div class="logo-container">
+            <div class="shield">
+                <div class="star"></div>
+            </div>
+            <div class="phrase">Dios, Unión, Libertad</div>
+        </div>
+        <h1>Guerra Civil de El Salvador</h1>
+    </header>
+    <main>
+        <section id="causas">
+            <h2>Causas del Conflicto</h2>
+            <p>La guerra civil de El Salvador, que se libró entre 1979 y 1992, tuvo raíces profundas en la historia del país y se desarrolló en un contexto de
+            extremas desigualdades sociales y económicas. Desde principios del siglo XX, El Salvador había sido gobernado por una élite terrateniente que controlaba
+            la mayor parte de la riqueza y el poder político, mientras que la mayoría de la población, compuesta por campesinos y trabajadores urbanos, vivía en 
+            condiciones de pobreza extrema y sin acceso a derechos básicos.</p>
+
+            <p>Durante la década de 1960 y 1970, las tensiones sociales y políticas aumentaron a medida que movimientos de izquierda y organizaciones populares 
+            comenzaron a demandar reformas sociales y económicas. Estos movimientos fueron reprimidos violentamente por el gobierno y los cuerpos de seguridad, lo
+            que llevó a un aumento en la radicalización de la oposición y al surgimiento de guerrillas.</p>
+
+            <p>El fraude electoral de 1972 y 1977, donde la oposición fue excluida del poder mediante elecciones manipuladas, exacerbó las tensiones. En 1979, un 
+            golpe de estado llevado a cabo por oficiales militares jóvenes prometió reformas, pero las promesas no se cumplieron y la represión continuó. Este golpe 
+            fue un punto de inflexión que llevó a la formación del Frente Farabundo Martí para la Liberación Nacional (FMLN), una coalición de grupos guerrilleros de 
+            izquierda.</p>
+
+            <p>El contexto internacional también jugó un papel crucial en el conflicto. En el marco de la Guerra Fría, Estados Unidos brindó un apoyo significativo al
+            gobierno salvadoreño en su lucha contra el FMLN, mientras que la Unión Soviética y Cuba apoyaron a las guerrillas. Esta intervención externa intensificó y 
+            prolongó el conflicto.</p>
+        </section>
+        <section id="inicio">
+            <h2>Inicio del Conflicto</h2>
+            <p>La guerra civil de El Salvador comenzó el 15 de octubre de 1979, cuando un golpe de estado derrocó al presidente Carlos Humberto Romero. Este golpe fue 
+            llevado a cabo por un grupo de jóvenes oficiales militares que prometieron reformas, pero las promesas no se cumplieron y la represión continuó1. La 
+            situación se agravó con el asesinato del arzobispo Óscar Arnulfo Romero en marzo de 1980, un defensor de los derechos humanos que había criticado 
+            abiertamente la violencia del gobierno y los escuadrones de la muerte. Este evento provocó una mayor radicalización de la oposición y el surgimiento del 
+            Frente Farabundo Martí para la Liberación Nacional (FMLN), una coalición de grupos guerrilleros de izquierda</p>
+            <div class="image-container">
+                <img src="imgs/img_inicio de conflicto.jpg" alt="Imagen del inicio del conflicto">
+            </div>
+        </section>
+        <section id="desarrollo">
+            <h2>Sucesos en el desarrollo del Conflicto</h2>
+            <p>El 10 de octubre de 1980 es fundado el Frente Farabundo Martí para la Liberación Nacional (FMLN), integrado por las organizaciones de la Dirección
+            Revolucionaria Unificada: FPL, RN, ERP, PCS; y posteriormente el PRTC en diciembre.</p>
+
+            <p>El 10 de enero de 1981 el FMLN lanza la Ofensiva Final con el objetivo de tomar el poder y de derrocar a la Junta Revolucionaria de Gobierno antes de la 
+            toma de posesión del presidente Ronald Reagen, que ocurriría el 20 de enero de 1981.</p>
+
+            <p>El 30 de septiembre de 1981 es fundado el partido político Alianza Republicana Nacionalista (ARENA).</p>
+
+            <p>Entre el 10 y 12 de diciembre de 1981 ocurre la Masacre de El Mozote, el Batallón Atlácatl llevó acaboo una matanza en el cantón El Mozote y en sus zonas
+            cercanas en el que murieron más de 900 personas inclyendo niños y ancianos, fueron asesinados bajo la sospecha de colaborar con guerrilleros.</p>
+
+            <p>El 17 de marzo de 1982 corresponsales extranjeros son amenazados de muerte por la Brigada Anticomunista Maximiliano Hernández Martínez. El mismo
+            día, cuatro periodistas neerlandeses son asesinados por el batallon Atonal en la masacre de Santa Rita.</p>
+
+            <p>La Masacre de Tenango y Guadalupe ocurrió entre el 28 de febrero y el 1 de marzo de 1983. Fue perpetrada por el Batallón Atlácatl en los cantones de 
+            Tenango y Guadalupe, en el municipio de Suchitoto. Durante la masacre, cientos de civiles fueron asesinados mientras intentaban huir de los bombardeos y
+            enfrentamientos.</p>
+
+            <p>El 11 de diciembre de 1983 el vicepresidente estadounidense George Bush visita El Salvador y exhorta a que desaparezcan los Escuadrones de la Muerte
+            por amenazar la estabilidad política.</p>
+
+            <p>El puente Cuscatlán es destruido por guerrilleros del FMLN en 1 de enero de 1984.</p>
+
+            <p>El 6 de mayo de 1984, José Napoleón Duarte es elegido presidente de El Salvador.</p>
+
+            <p>El 15 de octubre de 1984, se realiza el Primer Díalogo por la Paz en la Palma.</p>
+
+            <p>El 10 de enero de 1986, se lleva a cabo la segunda ronda de negociaciones de paz.</p>
+
+            <p>El 18 de octubre de 1986, el FMLN ataca la base militar de Ilopango.</p>
+                
+            <p>El 9 de febrero de 1987, se intensifican los combates en la zona oriental del país.</p>
+                
+            <p>El 15 de noviembre de 1987, se llevan a cabo nuevas negociaciones de paz en Sesori.</p>
+                
+            <p>El 22 de marzo de 1988, el FMLN lanza una ofensiva en el departamento de Morazán.</p>
+                
+            <p>El 5 de septiembre de 1988, se llevan a cabo negociaciones de paz en San José, Costa Rica.</p>
+
+            <p>La "Ofensiva hasta el tope", lanzada por el FMLN el 11 de noviembre de 1989, fue una campaña militar que buscaba demostrar la capacidad del grupo 
+            guerrillero para tomar el poder político en El Salvador. La ofensiva abarcó zonas centrales y orientales del país, incluyendo ciudades como San Salvador, 
+            San Miguel, Santa Ana, Zacatecoluca, Usulután y Chalatenango. El FMLN coordinó ataques simultáneos, causando un alto número de bajas tanto en las fuerzas
+            gubernamentales como en sus propias filas, así como numerosas víctimas civiles. Uno de los eventos más impactantes durante la ofensiva fue el asesinato de
+            seis sacerdotes jesuitas en la Universidad Centroamericana (UCA), lo que generó una condena internacional y aumentó la presión para encontrar una solución
+            negociada al conflicto. Esta ofensiva mostró que ninguna de las partes podía lograr una victoria total, lo que llevó a un incremento en las negociaciones
+            de paz, mediadas por las Naciones Unidas. La ofensiva reflejó la brutalidad del conflicto y la determinación del FMLN, al tiempo que reveló la necesidad 
+            de un acuerdo pacífico para restaurar la estabilidad en el país.</p>
+
+            <p>El 14 de enero de 1990, se intensifican las negociaciones de paz con la mediación de las Naciones Unidas.</p>
+
+            <p>El 26 de julio de 1990, se acuerda un cese al fuego temporal.</p>
+                
+            <p>El 27 de abril de 1991, se firman los Acuerdos de México.</p>
+                
+            <p>El 31 de diciembre de 1991, se acuerda la creación de la Comisión de la Verdad.</p>
+            <div class="image-container">
+                <img src="imgs/img_guerra_4.jpg" alt="Imagen del desarrollo del conflicto 1">
+            </div>
+        </section>
+        <section id="intervencion">
+            <h2>Intervención Extranjera</h2>
+            <p>La guerra civil estuvo influenciada por la Guerra Fría. Estados Unidos apoyó al gobierno salvadoreño, mientras que países como Cuba y la Unión Soviética 
+            brindaron apoyo a los grupos guerrilleros.</p>
+            <div class="image-container">
+                <img src="imgs/President_Ronald_Reagan_and_José_Napoleón_Duarte.jpg" alt="Intervención extranjera">
+            </div>
+        </section>
+        <section id="Fin del Conflicto y Acuerdos de Paz">
+            <h2>Acuerdo de Paz</h2>
+            <p>El conflicto llegó a su fin el 16 de enero de 1992, con la firma de los Acuerdos de Paz de Chapultepec en Ciudad de México. Estos acuerdos pusieron fin
+            a doce años de guerra civil y establecieron reformas políticas y sociales para promover la reconciliación y la democratización del país. Los acuerdos
+            incluyeron la desmovilización del FMLN, la reducción del ejército y la creación de una nueva policía civil. La firma de los acuerdos de paz marcó el inicio
+            de un proceso de recuperación y reconstrucción para El Salvador, aunque las secuelas del conflicto seguirían afectando al país durante muchos años más.</p>
+            <div class="image-container">
+                <img src="imgs/Acuerdos de paz_2.jpg" alt="Firma del acuerdo de paz">
+            </div>
+        </section>
+        <section id="consecuencias">
+            <h2>Consecuencias</h2>
+            <ul>
+                <li>
+                    <strong>Reestructuración de la Fuerza Armada de El Salvador:</strong>
+                    Como parte de los Acuerdos de Paz, la fuerza armada fue reestructurada para limitar su participación en la política y enfocarla en la defensa nacional.
+                </li>
+                <li>
+                    <strong>Disolución de la Guardia Nacional, la Policía Nacional y la Policía de Hacienda:</strong> 
+                    Estas fuerzas fueron desmanteladas debido a su implicación en violaciones de derechos humanos durante el conflicto.
+                </li>
+                <li>
+                    <strong>Disolución de los Batallones de Infantería y Escuadrones de la Muerte:</strong> 
+                    Unidades militares responsables de algunas de las peores atrocidades de la guerra fueron desmanteladas.
+                </li>
+                <li>
+                    <strong>Disolución de Algunas Instituciones Estatales:</strong> 
+                    Varias instituciones estatales involucradas en la represión y la violencia durante la guerra fueron disueltas.
+                </li>
+                <li>
+                    <strong>Creación de la Policía Nacional Civil:</strong>
+                    Se estableció una nueva policía civil profesional para reemplazar a las fuerzas desmanteladas y garantizar la seguridad pública.
+                </li>
+                <li>
+                    <strong>Disolución de la guerrilla del FMLN:</strong> 
+                    El FMLN fue desmovilizado como grupo armado y sus miembros reintegrados a la vida civil.
+                </li>
+                <li>
+                    <strong>Inicio del FMLN como partido político:</strong> 
+                    El FMLN se transformó en un partido político y comenzó a participar en elecciones democráticas.
+                </li>
+                <li>
+                    <strong>Creación del Tribunal Supremo Electoral:</strong> 
+                    Se creó una nueva institución para garantizar la transparencia y la justicia en los procesos electorales.
+                </li>
+                <li>
+                    <strong>Creación de La Procuraduría para la Defensa de los Derechos Humanos:</strong> 
+                    Se estableció una nueva entidad para proteger y promover los derechos humanos en el país.
+                </li>
+                <li>
+                    <strong>Creación de la Fiscalía General de la República:</strong> 
+                    Se fortaleció el sistema judicial con la creación de esta entidad para mejorar la investigación y la persecución de delitos.
+                </li>
+                <li>
+                    <strong>Creación del Organismo de Inteligencia del Estado:</strong> 
+                    Se estableció una nueva agencia de inteligencia para coordinar y mejorar las capacidades de seguridad nacional.
+                </li>
+                <li>
+                    <strong>Nacimiento de las pandillas en El Salvador:</strong> 
+                    La deportación de pandilleros desde Estados Unidos llevó al establecimiento y la expansión de pandillas como la MS-13 y la Mara
+                    Barrio 18 en El Salvador, lo que agravó los problemas de delincuencia organizada y violencia en el país.
+                </li>
+            </ul>
+        </section>
+        <section id="personajes-destacados">
+            <h1>Personajes destacados</h1>
+    <table>
+        <tr>
+            <th>Personajes</th>
+            <th>Información relevante</th>
+        </tr>
+        <tr>
+            <td>Óscar Arnulfo Romero</td>
+            <td>Sacerdote católico y arzobispo de San Salvador, conocido por su defensa de los derechos humanos y su lucha por los pobres. Fue asesinado en 1980 mientras oficiaba misa.</td>
+        </tr>
+        <tr>
+            <td>José Napoleón Duarte</td>
+            <td>Ingeniero civil y político, presidente de El Salvador entre 1984 y 1989. Jugó un papel clave en las negociaciones de paz durante la guerra civil salvadoreña.</td>
+        </tr>
+        <tr>
+            <td>Joaquín Villalobos</td>
+            <td>Exguerrillero y político, líder del Ejército Revolucionario del Pueblo (ERP) y estratega militar del FMLN durante la guerra civil.</td>
+        </tr>
+        <tr>
+            <td>Schafik Hándal</td>
+            <td>Político y líder de la izquierda salvadoreña, comandante del FMLN y secretario general del Partido Comunista Salvadoreño. Fue clave en los Acuerdos de Paz de 1992.</td>
+        </tr>
+        <tr>
+            <td>Roberto D'Aubuisson</td>
+            <td>Militar y político, fundador del partido ARENA. Fue acusado de ser el instigador del asesinato de monseñor Óscar Romero y de liderar escuadrones de la muerte.</td>
+        </tr>
+        <tr>
+            <td>Salvador Sánchez Cerén</td>
+            <td>Exguerrillero y político, presidente de El Salvador entre 2014 y 2019. Fue comandante del FMLN y participó en las negociaciones de paz.</td>
+        </tr>
+        <tr>
+            <td>Alfredo Cristiani</td>
+            <td>Empresario y político, presidente de El Salvador entre 1989 y 1994. Firmó los Acuerdos de Paz de Chapultepec en 1992, poniendo fin a la guerra civil.</td>
+        </tr>
+    </table>
+        </section>
+        <section id="fechas-importantes">
+            <h1>Fechas Importantes</h1>
+    
+    <table>
+        <tr>
+            <th>Fecha</th>
+            <th>Evento</th>
+        </tr>
+        <tr>
+            <td>15 de octubre de 1979</td>
+            <td>Inicia la Guerra Civil de El Salvador con el Golpe de Estado a Carlos Humberto Romero</td>
+        </tr>
+        <tr>
+            <td>24 de marzo de 1980</td>
+            <td>Asesinato del Arzobispo de San Salvador</td>
+        </tr>
+        <tr>
+            <td>10 de octubre de 1980</td>
+            <td>Se funda el FMLN</td>
+        </tr>
+        <tr>
+            <td>30 de Septiembre de 1981</td>
+            <td>Se constituye el nuevo partido político Alianza Republicana Nacionalista </td>
+        </tr>
+        <tr>
+            <td>13 de junio de 1984</td>
+            <td>primeras negociaciones entre el gobierno y la guerrilla</td>
+        </tr>
+        <tr>
+            <td>14 de septiembre de 1987</td>
+            <td>Ronda de la nunciatura</td>
+        </tr>
+        <tr>
+            <td>19 de marzo de 1989</td>
+            <td>Arena obtiene el trinfo en las elecciones presidenciales</td>
+        </tr>
+        <tr>
+            <td>23 de febrero de 1990</td>
+            <td>Muere el ex presidente salvadoreño José Napoleón Duarte</td>
+        </tr>
+        <tr>
+            <td>26 de julio de 1990</td>
+            <td>Gobierno y el FMLN</td>
+        </tr>
+        <tr>
+            <td>16 de enero de 1992</td>
+            <td>La firma los acuerdos de Paz en el Castillo de Chapultepec</td> 
+    </table>
+        </section>
+    </main>
+</body>
+<footer>
+    <p>©Todos los derechos reservados.</p>
+</footer>
+</html>

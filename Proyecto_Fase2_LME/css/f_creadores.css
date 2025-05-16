@@ -1,0 +1,194 @@
+/* RESET DE ESTILOS */
+/* Se eliminan márgenes y rellenos predeterminados en todos los elementos para evitar inconsistencias */
+* {
+    margin: 0; /* Elimina los márgenes predeterminados */
+    padding: 0; /* Elimina los rellenos predeterminados */
+    box-sizing: border-box; /* Asegura que el tamaño de los elementos incluya relleno y bordes */
+    font-family: 'Courier New', Courier, monospace; /* Fuente con estilo militar */
+}
+
+/* CUERPO DE LA PÁGINA */
+/* Configuración para un diseño centrado con colores militares */
+body {
+    background-color: #1C1C1C; /* Fondo oscuro tipo camuflaje */
+    color: #DDD; /* Texto claro para facilitar la lectura */
+    display: flex; /* Usa flexbox para organizar los elementos */
+    flex-direction: column; /* Organiza los elementos en una columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos verticalmente */
+    min-height: 100vh; /* Asegura que el contenido ocupe toda la altura de la ventana */
+    padding: 20px; /* Agrega espacio interno para mejorar el diseño */
+}
+
+/* BARRA DE NAVEGACIÓN */
+/* Estilos del menú superior con diseño militar */
+nav {
+    background-color: #223344; /* Azul oscuro militar */
+    padding: 15px 0; /* Espaciado interno superior e inferior */
+    border-bottom: 3px solid #C0A060; /* Línea dorada militar en la parte inferior */
+    width: 100%; /* La barra ocupa todo el ancho disponible */
+}
+
+/* LISTA DE NAVEGACIÓN */
+/* Configuración del menú para una disposición horizontal */
+.horizontal {
+    list-style: none; /* Eliminamos los estilos de lista predeterminados */
+    display: flex; /* Alinear los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos en la barra */
+    gap: 20px; /* Espaciado uniforme entre los elementos */
+    flex-wrap: wrap; /* Permite que el menú se ajuste en dispositivos pequeños */
+}
+
+/* ESTILOS PARA LOS ENLACES DEL MENÚ */
+/* Configuración de cada enlace de la navegación */
+.horizontal > li > a {
+    display: block; /* Ajustamos para que ocupe todo el espacio posible */
+    padding: 12px 20px; /* Espaciado interno */
+    color: #C0A060; /* Color dorado militar */
+    text-decoration: none; /* Eliminamos el subrayado */
+    font-weight: bold; /* Texto en negrita */
+    text-transform: uppercase; /* Convertimos el texto en mayúsculas */
+    border: 2px solid transparent; /* Bordes iniciales invisibles */
+    transition: 0.3s ease-in-out; /* Suaviza la animación */
+}
+
+/* EFECTO VISUAL AL PASAR EL CURSOR SOBRE LOS ENLACES */
+.horizontal > li > a:hover {
+    background-color: #2B3E50; /* Fondo azul oscuro militar */
+    border: 2px solid #C0A060; /* Bordes dorados */
+    color: white; /* Texto en blanco */
+}
+
+/* CONTENEDOR PRINCIPAL */
+/* Ajustamos el cuadro que contendrá la información de los creadores */
+.container {
+    background-color: #2B2B2B; /* Fondo gris oscuro */
+    padding: 30px; /* Espaciado interno */
+    border-radius: 12px; /* Bordes redondeados tipo tarjeta */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Sombra elegante */
+    width: 90%; /* Ocupará el 90% del ancho disponible */
+    max-width: 800px; /* Máximo ancho permitido */
+    margin-top: 20px; /* Espaciado superior */
+    text-align: center; /* Centra el contenido */
+}
+
+/* ENCABEZADO PRINCIPAL */
+/* Ajustamos el título de la sección */
+h1 {
+    color: #C0A060; /* Dorado militar */
+    margin-bottom: 20px; /* Espaciado inferior */
+    text-transform: uppercase; /* Convertimos el texto en mayúsculas */
+    font-weight: bold; /* Hace el texto más grueso */
+    border-bottom: 2px solid #C0A060; /* Línea dorada inferior */
+    padding-bottom: 10px; /* Espaciado adicional debajo del título */
+}
+
+/* ESTILO DE TARJETAS */
+/* Se mejora la presentación de los creadores en tarjetas */
+.creator {
+    display: flex; /* Permite organización flexible */
+    flex-direction: column; /* Los elementos se organizan en columna */
+    align-items: center; /* Centra los elementos dentro de la tarjeta */
+    background-color: #2B2B2B; /* Fondo gris oscuro tipo militar */
+    padding: 20px; /* Espaciado interno */
+    margin-bottom: 15px; /* Espaciado entre tarjetas */
+    border-radius: 12px; /* Bordes redondeados para dar apariencia de tarjeta */
+    border: 2px solid #C0A060; /* Bordes dorados militares */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Agrega sombra para destacar las tarjetas */
+    width: 90%; /* Mantiene un tamaño adecuado */
+    max-width: 400px; /* Limita el tamaño para mantener proporción */
+    text-align: center; /* Centra el contenido */
+    transition: transform 0.3s ease-in-out; /* Agrega una animación al pasar el mouse */
+}
+
+/* Efecto al pasar el cursor sobre las tarjetas */
+.creator:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño para efecto visual */
+}
+
+/* IMÁGENES DE LOS CREADORES */
+/* Se aseguran bordes circulares en las fotos */
+.creator img {
+    width: 120px; /* Tamaño optimizado */
+    height: 120px; /* Mantiene proporción */
+    border-radius: 50%; /* Hace la imagen completamente circular */
+    object-fit: cover; /* Ajusta la imagen dentro del círculo sin deformarse */
+    border: 3px solid #C0A060; /* Bordes dorados militares */
+    margin-bottom: 10px; /* Espaciado inferior */
+}
+
+/* INFORMACIÓN DE LOS CREADORES */
+/* Ajusta el texto dentro de las tarjetas */
+.creator-info {
+    color: #DDD; /* Texto gris claro */
+    font-size: 1rem; /* Tamaño optimizado */
+    text-align: justify; /* Alinea el texto para mejor lectura */
+    padding: 10px; /* Espaciado interno */
+}
+
+/* PIE DE PÁGINA */
+footer {
+    background-color: #111; /* Fondo negro */
+    color: white; /* Texto blanco */
+    text-align: center; /* Centra el texto */
+    padding: 15px 0; /* Espaciado interno */
+    width: 100%; /* Pie de página ocupa todo el ancho */
+    border-top: 3px solid #C0A060; /* Línea superior dorada militar */
+}
+
+/* AJUSTES RESPONSIVOS */
+/* Diseño adaptable para móviles */
+@media (max-width: 768px) {
+    .creator {
+        width: 100%; /* Ocupa todo el ancho disponible en pantallas pequeñas */
+    }
+}
+
+
+/* Computadoras (pantallas grandes) */
+@media (min-width: 1024px) {
+  .horizontal {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .horizontal a {
+    padding: 1rem 2rem;
+    width: auto;
+  }
+
+  .guerra-civil {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+/* tablets (modo vertical y horizontal) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .horizontal {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .horizontal li {
+      flex: 1 1 50%;
+      text-align: center;
+    }
+  
+    .horizontal a {
+      padding: 1rem;
+      font-size: 1.1rem;
+    }
+  
+    .guerra-civil {
+      padding: 1.5rem;
+      font-size: 1.1rem;
+    }
+  
+    main h1 {
+      font-size: 2rem;
+    }
+}

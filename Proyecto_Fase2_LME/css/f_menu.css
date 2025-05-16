@@ -1,0 +1,160 @@
+/* RESET DE ESTILOS: Elimina márgenes y rellenos predeterminados para asegurar una base uniforme */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace; /* Fuente con aspecto rígido y militar */
+}
+
+/* ESTILOS GENERALES DEL CUERPO */
+body {
+    background-color: #1C1C1C; /* Fondo oscuro para mayor contraste */
+    color: #DDD; /* Texto en tonos grises para un aspecto serio */
+}
+
+/* ESTILO DEL TÍTULO PRINCIPAL */
+h1 {
+    text-align: center; /* Centra el texto */
+    font-size: 48px; /* Tamaño grande para destacar el título */
+    margin-top: 120px; /* Espacio suficiente para evitar que el encabezado lo cubra */
+    color: #C0A060; /* Color dorado militar */
+    text-transform: uppercase; /* Convierte el texto en mayúsculas */
+    font-weight: bold; /* Hace el texto más grueso para mayor impacto */
+    border-bottom: 2px solid #C0A060; /* Línea decorativa debajo del título */
+    padding-bottom: 10px; /* Espacio debajo del texto */
+}
+
+/* ESTILOS PARA EL TEXTO DE LA GUERRA CIVIL */
+.guerra-civil {
+    text-align: justify; /* Alinea el texto para una lectura organizada */
+    font-size: 20px; /* Ajusta el tamaño del texto */
+    margin: 20px; /* Espacio alrededor del texto */
+    line-height: 1.8; /* Espaciado entre líneas para mejorar legibilidad */
+    color: #E0E0E0; /* Color gris claro para contraste visual */
+    background-color: #2B2B2B; /* Fondo oscuro sólido */
+    padding: 15px; /* Espacio interno alrededor del texto */
+    border-radius: 8px; /* Bordes redondeados para estética */
+}
+
+/* Barra de navegación */
+nav {
+    background-color: #2B3E50; /* Azul táctico oscuro */
+    padding: 15px 0; /* Espaciado interno superior e inferior */
+    border-bottom: 3px solid #C0A060; /* Línea dorada militar */
+    width: 100%; /* La barra ocupa todo el ancho */
+    display: flex; /* Activa flexbox */
+    justify-content: center; /* Centra los elementos */
+    position: fixed; /* Fija la barra de navegación */
+    top: 0; /* Se mantiene en la parte superior */
+    z-index: 1000; /* Prioridad sobre otros elementos */
+}
+
+/* Lista de navegación */
+nav ul {
+    list-style: none; /* Elimina los estilos de lista predeterminados */
+    display: flex; /* Alinea los elementos en fila */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    padding: 0; /* Elimina el relleno */
+    gap: 20px; /* Espaciado entre elementos */
+}
+
+/* Elementos del menú */
+nav ul.horizontal li {
+    margin: 0 15px; /* Espaciado entre elementos */
+}
+
+/* Enlaces del menú */
+nav ul.horizontal li a {
+    color: #C0A060; /* Color dorado militar */
+    text-decoration: none; /* Elimina subrayado de los enlaces */
+    font-weight: bold; /* Hace el texto más grueso */
+    padding: 12px 20px; /* Espaciado interno */
+    background-color: #1C1C1C; /* Fondo negro táctico */
+    border: 2px solid #444; /* Borde gris oscuro */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: 0.3s ease-in-out; /* Suaviza la transición del efecto */
+}
+
+/* Efecto visual al pasar el cursor sobre los elementos del menú */
+.horizontal > li:hover {
+    background-color: #2B3E50; /* Cambia el color de fondo */
+    transition: 0.3s; /* Suaviza la transición del cambio de color */
+}
+
+/* ESTILOS DEL PIE DE PÁGINA */
+footer {
+    background-color: #111; /* Color negro para el pie de página */
+    color: white; /* Texto en blanco */
+    text-align: center; /* Centra el texto */
+    padding: 18px 0; /* Espaciado superior e inferior */
+    position: relative; /* Cambio de 'fixed' a 'relative' para que no tape contenido */
+    width: 100%; /* Hace que ocupe todo el ancho */
+    border-top: 2px solid #C0A060; /* Línea superior dorada militar */
+}
+
+/* ESTILOS DEL TEXTO DENTRO DEL PIE DE PÁGINA */
+footer p {
+    margin: 0; /* Elimina cualquier margen */
+    font-size: 14px; /* Tamaño de texto más pequeño */
+}
+
+/* Estilo para el contenedor de la imagen */
+.contenedor-imagen {
+    display: flex; /* Permite centrar la imagen */
+    justify-content: center; /* Centra la imagen horizontalmente */
+    margin: 20px 0; /* Agrega espacio entre el texto y la imagen */
+}
+
+/* Estilo para la imagen */
+.contenedor-imagen img {
+    max-width: 65%; /* Limita el ancho de la imagen */
+    height: auto; /* Mantiene las proporciones */
+    border: 5px solid #C0A060; /* Agrega un borde dorado militar */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Sombra elegante */
+}
+
+/* Media queries para adaptabilidad */
+
+/* Computadoras (pantallas grandes) */
+@media (min-width: 1024px) {
+    .horizontal {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+  
+    .guerra-civil {
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+/* Teléfonos móviles */
+@media (max-width: 768px) {
+    .horizontal {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .guerra-civil {
+        padding: 0.5rem;
+    }
+}
+
+/* Tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .horizontal {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .horizontal li {
+        flex: 1 1 50%;
+    }
+
+    .guerra-civil {
+        padding: 1.5rem;
+        font-size: 1.1rem;
+    }
+}
